@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'meterdata',
+    'core', 
+    'django_forms_bootstrap'
 ]
 
 MIDDLEWARE = [
@@ -99,6 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+\
 
 
 # Internationalization
@@ -119,5 +122,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+LOGIN_REDIRECT_URL = '/'
 from .local_settings import * 
