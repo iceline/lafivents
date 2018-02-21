@@ -5,6 +5,12 @@ import os
 class MeterInput(models.Model):
     title = models.CharField(verbose_name = u'meter title', max_length = 255)
     directory = models.CharField(verbose_name = u'output file directory', max_length = 255, unique =True)
+    def get_event_count(self):
+        return self.entry_set.count()
+    def get_last_event(self):
+        return self.entry_set.order_by('-time')[0]
+    def get_first_event(self):
+        return self.entry_set.order_by('time')[0]
     def __unicode__(self):
         return self.title
     class Meta: 
@@ -21,6 +27,8 @@ SYNC_STATUSES = (
     ('start', 'sync started'),
     ('success', 'sync successfull'),
 )
+
+
 class SyncLog(models.Model):
     started = models.DateTimeField(u'started', auto_now_add = True)
     finished = models.DateTimeField(u'ended', default = None, blank = True, null = True)
@@ -35,6 +43,7 @@ class SyncFiles(models.Model):
     filename = models.CharField(u'file name', max_length = 255)
     hash = models.CharField(u'file hash', max_length = 32, help_text = 'file hash in MD5 format', blank = True, null = True,default = None )
     rowcount = models.PositiveIntegerField(u'row count', default = 0 )
+    first_seen = models.DateTimeField('first seen', auto_now_add = True)
     class Meta:
         unique_together = ('input', 'filename', 'hash')
 

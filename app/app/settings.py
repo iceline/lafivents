@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'meterdata',
     'core', 
-    'django_forms_bootstrap'
+    'django_forms_bootstrap',
+
 ]
 
 MIDDLEWARE = [

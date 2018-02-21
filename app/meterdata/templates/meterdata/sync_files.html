@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>File sync status</h1>
+    {% if last_sync.status == 'start' %}
+        <div class="alert alert-warning">
+            Last sync hasn't finished. It started {{ last_sync.started }}
+        </div>
+    {% endif %}
+    {% if last_sync.status == 'success' %}
+        <div class="alert alert-success">
+            Last sync successfuly finished at {{ last_sync.finished}}
+        </div>
+    {% endif %}
+    <h2>Synced files</h2>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>First seen</th>
+                    <th>Directory</th>
+                    <th>Filename</th>
+                    <th>Hash</td>
+                    <th># of rows</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in sync_files.object_list %}
+                <tr>
+                    <td>{{ obj.first_seen }} </td>
+                    <td> {{ obj.input.directory }}</td>
+                    <td> {{ obj.filename }} </td>
+                    <td> {{ obj.hash }}</td>
+                    <td> {{ obj.rowcount }} </td>
+                </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5">No synced files (yet). To start sync run manage.py run_meter_files </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>    
+        {% with sync_files as page_obj %}
+            {% include "pagination.html" %}
+        {% endwith %}
+    </div>
+{% endblock %}

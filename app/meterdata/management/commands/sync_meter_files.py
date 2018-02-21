@@ -63,4 +63,5 @@ class Command(BaseCommand):
                     if log_file:
                         self.parse_file(os.path.join(dirpath, f), input, log_file)
             log.status = 'success'
+            log.finished = timezone.datetime.now()
             log.save()
