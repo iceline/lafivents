@@ -33,3 +33,6 @@ def list_input_data(request, input ):
     entries = Entry.objects.filter(input = data['input']).order_by('-time')
     data['entries'] = Paginator(entries, 250).page(request.GET.get('page' , 1))
     return render(request, "meterdata/list_meter_data.html", data )
+
+def list_statistics(request):
+    pass
