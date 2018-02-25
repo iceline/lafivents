@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form class="form-signin" method="POST" action="{% url 'login-view' %}">
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Login form</h1>
+        <p>Please enter valid credentails to continue.</a></p>
+      </div>
+      {% csrf_token %}
+                  {% load bootstrap_tags %}
+    {{ form|as_bootstrap }}
+
+
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2018</p>
+    </form>
+{% endblock %}
