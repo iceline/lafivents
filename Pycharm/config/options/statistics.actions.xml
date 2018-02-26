@@ -1,0 +1,31 @@
+<application>
+  <component name="ActionsCollector">
+    <counts>
+      <entry action="$Copy" count="1" />
+      <entry action="EditorBackSpace" count="7" />
+      <entry action="EditorChooseLookupItem" count="2" />
+      <entry action="EditorCopy" count="9" />
+      <entry action="EditorDelete" count="4" />
+      <entry action="EditorDown" count="2" />
+      <entry action="EditorEscape" count="2" />
+      <entry action="EditorLeft" count="11" />
+      <entry action="EditorLineEnd" count="1" />
+      <entry action="EditorLineStart" count="1" />
+      <entry action="EditorLineStartWithSelection" count="1" />
+      <entry action="EditorPaste" count="8" />
+      <entry action="EditorPreviousWordWithSelection" count="2" />
+      <entry action="EditorRight" count="1" />
+      <entry action="ExportSettings" count="2" />
+      <entry action="NewDir" count="1" />
+      <entry action="NewFile" count="1" />
+      <entry action="Rerun" count="1" />
+      <entry action="Run" count="2" />
+      <entry action="RunClass" count="13" />
+      <entry action="SaveAll" count="3" />
+      <entry action="ShowFilePath" count="1" />
+      <entry action="ShowSettings" count="7" />
+      <entry action="TemplateProjectProperties" count="1" />
+      <entry action="com.jetbrains.python.console.RunPythonConsoleAction" count="1" />
+    </counts>
+  </component>
+</application>

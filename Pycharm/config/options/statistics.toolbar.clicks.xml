@@ -1,0 +1,9 @@
+<application>
+  <component name="ToolbarClicksCollector">
+    <counts>
+      <entry action="Rerun@RunnerToolbar" count="1" />
+      <entry action="com.intellij.webcore.packaging.InstalledPackagesPanel$4@ToolbarDecorator" count="7" />
+      <entry action="com.intellij.webcore.packaging.ManagePackagesDialog$1@ToolbarDecorator" count="1" />
+    </counts>
+  </component>
+</application>

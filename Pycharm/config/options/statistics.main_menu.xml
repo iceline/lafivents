@@ -1,0 +1,12 @@
+<application>
+  <component name="MainMenuCollector">
+    <counts>
+      <entry path="File -&gt; Default Settings..." count="1" />
+      <entry path="File -&gt; Export Settings..." count="2" />
+      <entry path="File -&gt; Save All" count="1" />
+      <entry path="File -&gt; Settings..." count="7" />
+      <entry path="Run -&gt; Run" count="2" />
+      <entry path="Tools -&gt; Python Console..." count="1" />
+    </counts>
+  </component>
+</application>
