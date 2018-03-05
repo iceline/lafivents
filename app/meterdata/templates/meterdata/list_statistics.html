@@ -57,9 +57,10 @@
         </tbody> 
     </table>
     {% else %}
-    <p class="message message-info">
-        Please enter some data
-    </p>
+    <div class="alert alert-info" role="alert">
+            <strong>No data found!</strong> Please check your search criteria.
+          </div>
+          
     {% endif %}
     {% with entries as page_obj %}
         {% include "simple_paginator.html" %}

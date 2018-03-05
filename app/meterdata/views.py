@@ -83,7 +83,7 @@ def list_statistics(request, input):
                                 title = 'Input %s consumption statistics from %s till %s' % (input, data['date_from'], data['date_till']),
                                 legend_at_bottom = True, tooltip_border_radius =  10, y_title = 'consumption', style=BlueStyle)
             chart.x_labels = [value['day'].strftime("%x") for value in dataset]
-            chart.add('%s consumption' % (data['aggregate_by']), [value['consumption']  for value in dataset])
+            chart.add('%sly consumption' % (data['aggregate_by']), [{'value' : value['consumption'], 'label' : value['day'].strftime("%x")} for value in dataset])
             return chart.render_django_response()
         data['entries'] = Paginator(dataset, 250).page(request.GET.get('page', 1))
         data['search'] = '&'.join(data['search'])
