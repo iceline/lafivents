@@ -1,4 +1,3 @@
-
 from .views import IndexView
 from django.conf.urls import url
 
@@ -7,6 +6,7 @@ from django.contrib.auth import views as auth_views
 from meterdata.views import ListMeters
 from meterdata.views import sync_files
 from meterdata.views import list_input_data
+from meterdata.views import list_statistics
 
 
 urlpatterns = [
@@ -16,4 +16,6 @@ urlpatterns = [
     url(r'^logout/$', auth_views.LogoutView.as_view(next_page = '/accounts/login/'), name = 'logout'),  
     url(r'^sync/$', sync_files, name = 'sync-log'),
     url(r'^input/(\d+)/$', list_input_data, name = 'input-data'),
+    url(r'^input/(\d+)/statistics/$', list_statistics, name = 'input-statistics' ),
+
 ]

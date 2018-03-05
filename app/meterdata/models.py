@@ -49,8 +49,8 @@ class SyncFiles(models.Model):
 
 POSSIBLE_AGGREGATE_VALUES = ('day', 
                             'week',
-                            'month'
-                            'quarter'
+                            'month',
+                            'quarter',
                             'year') 
 
 

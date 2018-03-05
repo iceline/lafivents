@@ -6,10 +6,10 @@
 
     <ul class="nav nav-tabs nav-fill">
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'input-data' input.pk %}">Raw data</a>
+          <a class="nav-link" href="{% url 'input-data' input.pk %}">Raw data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'input-statistics' input.pk %}">Statistics</a>
+          <a class="nav-link active" href="{% url 'input-statistics' input.pk %}">Statistics</a>
         </li>
       </ul>
       
@@ -18,31 +18,37 @@
             <form class="form-inline" method="GET">
                 <input type="text" value="{{ date_from }}" name="date-from" class="form-control mb-2 mr-sm-4 mb-sm-0 datepicker" id="inlineFormInput" placeholder="Date from">
                 <input type="text" value="{{ date_till }}" name="date-till" class="form-control mb-2 mr-sm-4 mb-sm-0 datepicker" id="inlineFormInput" placeholder="Date till">
+                <select id="aggregate-by"  class="form-control mb-2 mr-sm-4 mb-sm-0" name="aggregate-by">
+                    <option>Aggregate by</option>
+                    {% for value in aggregate_values %}
+                        <option {% if aggregate_by == value %}selected{% endif %} value="{{ value }}">{{ value }}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" name="show" value="true" />
                 <button type="submit" class="btn btn-primary">Search</button>
 
             </form>
         </div>
         {% include "simple_paginator.html" %}
     {% endwith %}
-    
+    {% if entries %}
+    <img src="{% url 'input-statistics' input.pk %}?{{ search }}&chart=True" width="930" />
     <table class="table table-striped table-condensed table-sm" >
         <thead>
             <tr>
                 <th>time</th>
-                <th>reading value</th>
-                <th>difference from previous reading</th>
+                <th>total consumption</th>
             </tr>
         </thead>
         <tbody>
             {% for obj in entries.object_list %}
                 <tr>
-                    <td>{{ obj.time }} </td>
-                    <td>{{ obj.value }}</td>
-                    <td>{{ obj.delta_from_previous }}</td>  
+                    <td>{{ obj.day }} </td>
+                    <td>{{ obj.consumption }}</td>
                 </tr> 
             {% empty %}
             <tr>
-                <td colspan="3">
+                <td colspan="2"> 
                     No data yet.
                 </td>
             </tr>
@@ -50,6 +56,11 @@
             
         </tbody> 
     </table>
+    {% else %}
+    <p class="message message-info">
+        Please enter some data
+    </p>
+    {% endif %}
     {% with entries as page_obj %}
         {% include "simple_paginator.html" %}
 {% endwith %}

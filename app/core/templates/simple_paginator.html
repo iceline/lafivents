@@ -1,4 +1,5 @@
-    <ul class="pagination justify-content-center pagination-sm">
+<nav class="simple-pager">
+<ul class="pagination justify-content-center pagination-sm">
             {% if page_obj.has_previous %}
               <!-- If it ain't a search result display, don't append the search query
                    to the URL. -->
@@ -35,3 +36,4 @@
             </li>
             {% endif %}
         </ul>
+    </nav>
