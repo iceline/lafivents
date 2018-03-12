@@ -22,9 +22,9 @@
             <tr>
                 <td><a href="{% url 'input-data' input.pk %}">{{ input.title }}</a></td>
                 <td>{{ input.get_event_count }}</td>
-                <td>{{ input.get_first_event.time  }}</td>
+                <td>{{ input.get_first_event.time|date:'Y-m-d H:i'    }}</td>
 
-                <td>{{ input.get_last_event.time  }}</td>
+                <td>{{ input.get_last_event.time|date:'Y-m-d H:i'    }}</td>
             </tr>
         {% endfor %}
          </tbody>

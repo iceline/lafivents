@@ -51,17 +51,19 @@ def list_input_data(request, input):
         chart.add("%s readings" % (input) , list(entries))
         return chart.render_django_response()
     else:
-        entries = entries.order_by('-time')
         data['entries'] = Paginator(entries, 250).page(request.GET.get('page' , 1))
         data['search'] = '&'.join(data['search'])
         return render(request, "meterdata/list_meter_data.html", data )
 
 
-def list_statistics(request, input):
+def list_statistics(request, input, chart = False):
     data = {}
     data['input'] = get_object_or_404(MeterInput, pk = input)
     data['search'] = []
-    data['aggregate_values'] = ('day', 
+    data['chart'] = chart
+    data['aggregate_values'] = ('15min', 
+                            'hour',
+                            'day', 
                             'week',
                             'month',
                             'quarter',
@@ -86,5 +88,6 @@ def list_statistics(request, input):
             chart.add('%sly consumption' % (data['aggregate_by']), [{'value' : value['consumption'], 'label' : value['day'].strftime("%x")} for value in dataset])
             return chart.render_django_response()
         data['entries'] = Paginator(dataset, 250).page(request.GET.get('page', 1))
+        data['total_consumption'] = Entry.objects.get_total_consumption(input, data['date_from'], data['date_till'])
         data['search'] = '&'.join(data['search'])
     return render(request, "meterdata/list_statistics.html", data)

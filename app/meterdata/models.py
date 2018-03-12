@@ -47,7 +47,9 @@ class SyncFiles(models.Model):
     class Meta:
         unique_together = ('input', 'filename', 'hash')
 
-POSSIBLE_AGGREGATE_VALUES = ('day', 
+POSSIBLE_AGGREGATE_VALUES = (
+                            '15min',
+                            'day', 
                             'week',
                             'month',
                             'quarter',
@@ -59,11 +61,16 @@ class EntryManager(models.Manager):
     def get_consumption_statistics(self, input, aggregate_by, date_from, date_till):
         if aggregate_by not in POSSIBLE_AGGREGATE_VALUES:
             raise ValueError("Invalid aggregate value %s " % (aggregate_by))
-        qset = self.extra({'day' : "date_trunc('%s', time)" % (aggregate_by)})
+        if aggregate_by == '15min':
+            qset = self.extra({'day' : "to_timestamp(floor((extract('epoch' from time) / 900 )) * 900) " })
+        else:
+            qset = self.extra({'day' : "date_trunc('%s', time)" % (aggregate_by)})
         qset = qset.filter(time__gte = date_from, time__lte = date_till)
-        qset = qset.values('day').annotate(consumption = models.Sum('delta_from_previous'))
+        qset = qset.values('day').annotate(consumption = models.Sum('delta_from_previous')).order_by('day')
         return qset 
-
+    def get_total_consumption(self, input, date_from, date_till):
+        qset = self.filter(time__gte = date_from, time__lte = date_till)
+        return qset.aggregate(total_consumption = models.Sum('delta_from_previous'))
 class Entry(models.Model):
     log = models.ForeignKey(SyncFiles, verbose_name = 'sync log', on_delete = models.CASCADE)
     input = models.ForeignKey(MeterInput, verbose_name = 'heat meter', on_delete = models.CASCADE)
@@ -76,3 +83,4 @@ class Entry(models.Model):
     class Meta:
         verbose_name = 'heat meter reading'
         unique_together = ('input', 'time')
+        ordering = ['time']

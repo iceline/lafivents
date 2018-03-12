@@ -17,5 +17,6 @@ urlpatterns = [
     url(r'^sync/$', sync_files, name = 'sync-log'),
     url(r'^input/(\d+)/$', list_input_data, name = 'input-data'),
     url(r'^input/(\d+)/statistics/$', list_statistics, name = 'input-statistics' ),
+    url(r'^input/(\d+)/graph/$', list_statistics, { 'chart' : True} , name = 'input-chart'),
 
 ]

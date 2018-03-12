@@ -6,10 +6,14 @@
 
     <ul class="nav nav-tabs nav-fill">
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'input-data' input.pk %}">Raw data</a>
+          <a class="nav-link active" href="{% url 'input-data' input.pk %}?{{ search }}">Raw data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'input-statistics' input.pk %}">Statistics</a>
+          <a class="nav-link" href="{% url 'input-statistics' input.pk %}?{{ search }}"> Report</a>
+        </li>
+        
+        <li class="nav-item">
+                <a class="nav-link" href="{% url 'input-chart' input.pk %}?{{ search }}">Chart</a>
         </li>
       </ul>
       
@@ -30,13 +34,13 @@
             <tr>
                 <th>time</th>
                 <th>reading value</th>
-                <th>difference from previous reading</th>
+                <th>difference from previous reading (kWh)</th>
             </tr>
         </thead>
         <tbody>
             {% for obj in entries.object_list %}
                 <tr>
-                    <td>{{ obj.time }} </td>
+                    <td>{{ obj.time|date:'Y-m-d H:i'   }} </td>
                     <td>{{ obj.value }}</td>
                     <td>{{ obj.delta_from_previous }}</td>  
                 </tr> 
@@ -57,6 +61,6 @@
 {% endblock %}
 {% block extrascript %}
 <script> 
-    $('.datepicker').datepicker({ format: 'yyyy-mm-dd'} );
-</script> 
+        $('.datepicker').datetimepicker({   format:'Y-m-d H:i'});
+    </script> 
 {% endblock %}
