@@ -1,0 +1,1 @@
+t=2018-03-21T08:38:19+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=1 uname= method=GET path=/api/datasources status=403 remote_addr=127.0.0.1 time_ms=37 size=31 referer=http://127.0.0.1:3000/datasources

@@ -1,0 +1,71 @@
+t=2018-03-14T13:35:50+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/d/_pXeTxgik/heat-meter status=302 remote_addr=127.0.0.1 time_ms=21 size=29 referer=
+t=2018-03-14T13:40:28+0200 lvl=info msg="Starting Grafana" logger=server version=5.0.1 commit=a747ec349 compiled=2018-03-08T10:54:26+0200
+t=2018-03-14T13:40:28+0200 lvl=info msg="Config loaded from" logger=settings file=C:\\Users\\Admin\\lafivents\\grafana-5.0.1/conf/defaults.ini
+t=2018-03-14T13:40:28+0200 lvl=info msg="Config loaded from" logger=settings file=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\conf\\custom.ini
+t=2018-03-14T13:40:28+0200 lvl=info msg="Path Home" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1
+t=2018-03-14T13:40:28+0200 lvl=info msg="Path Data" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data
+t=2018-03-14T13:40:28+0200 lvl=info msg="Path Logs" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data\\log
+t=2018-03-14T13:40:28+0200 lvl=info msg="Path Plugins" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data\\plugins
+t=2018-03-14T13:40:28+0200 lvl=info msg="Path Provisioning" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\conf\\provisioning
+t=2018-03-14T13:40:28+0200 lvl=info msg="App mode production" logger=settings
+t=2018-03-14T13:40:28+0200 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
+t=2018-03-14T13:40:28+0200 lvl=info msg="Starting DB migration" logger=migrator
+t=2018-03-14T13:40:28+0200 lvl=info msg="Executing migration" logger=migrator id="copy data account to org"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account to org"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Executing migration" logger=migrator id="copy data account_user to org_user"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account_user to org_user"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Starting plugin search" logger=plugins
+t=2018-03-14T13:40:28+0200 lvl=info msg="Initializing Alerting" logger=alerting.engine
+t=2018-03-14T13:40:28+0200 lvl=info msg="Initializing CleanUpService" logger=cleanup
+t=2018-03-14T13:40:28+0200 lvl=info msg="Initializing Stream Manager"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Initializing HTTP Server" logger=http.server address=0.0.0.0:3000 protocol=http subUrl= socket=
+t=2018-03-14T13:40:28+0200 lvl=eror msg="Startup failed" error="Fail to start server. error: listen tcp 0.0.0.0:3000: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted."
+t=2018-03-14T13:40:28+0200 lvl=info msg="Shutdown started" logger=server code=1 reason="startup error"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Stopped HTTP server" logger=http.server
+t=2018-03-14T13:40:28+0200 lvl=info msg="Stopped Plugins" logger=plugins error="context canceled"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Stopped CleanUpService" logger=cleanup reason="context canceled"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Stopped Alerting" logger=alerting.engine reason="context canceled"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Stopped Stream Manager"
+t=2018-03-14T13:40:28+0200 lvl=info msg="Grafana shutdown completed." code=1
+t=2018-03-14T13:40:38+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=0 uname= method=GET path=/d/_pXeTxgik/heat-meter status=302 remote_addr=127.0.0.1 time_ms=20 size=29 referer=
+t=2018-03-14T13:40:46+0200 lvl=info msg="Starting Grafana" logger=server version=5.0.1 commit=a747ec349 compiled=2018-03-08T10:54:26+0200
+t=2018-03-14T13:40:46+0200 lvl=info msg="Config loaded from" logger=settings file=C:\\Users\\Admin\\lafivents\\grafana-5.0.1/conf/defaults.ini
+t=2018-03-14T13:40:46+0200 lvl=info msg="Config loaded from" logger=settings file=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\conf\\custom.ini
+t=2018-03-14T13:40:46+0200 lvl=info msg="Path Home" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1
+t=2018-03-14T13:40:46+0200 lvl=info msg="Path Data" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data
+t=2018-03-14T13:40:46+0200 lvl=info msg="Path Logs" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data\\log
+t=2018-03-14T13:40:46+0200 lvl=info msg="Path Plugins" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data\\plugins
+t=2018-03-14T13:40:46+0200 lvl=info msg="Path Provisioning" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\conf\\provisioning
+t=2018-03-14T13:40:46+0200 lvl=info msg="App mode production" logger=settings
+t=2018-03-14T13:40:46+0200 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
+t=2018-03-14T13:40:46+0200 lvl=info msg="Starting DB migration" logger=migrator
+t=2018-03-14T13:40:46+0200 lvl=info msg="Executing migration" logger=migrator id="copy data account to org"
+t=2018-03-14T13:40:46+0200 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account to org"
+t=2018-03-14T13:40:46+0200 lvl=info msg="Executing migration" logger=migrator id="copy data account_user to org_user"
+t=2018-03-14T13:40:46+0200 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account_user to org_user"
+t=2018-03-14T13:40:46+0200 lvl=info msg="Starting plugin search" logger=plugins
+t=2018-03-14T13:40:46+0200 lvl=info msg="Initializing Alerting" logger=alerting.engine
+t=2018-03-14T13:40:46+0200 lvl=info msg="Initializing CleanUpService" logger=cleanup
+t=2018-03-14T13:40:46+0200 lvl=info msg="Initializing Stream Manager"
+t=2018-03-14T13:40:46+0200 lvl=info msg="Initializing HTTP Server" logger=http.server address=0.0.0.0:3000 protocol=http subUrl= socket=
+t=2018-03-15T15:34:40+0200 lvl=info msg="Starting Grafana" logger=server version=5.0.1 commit=a747ec349 compiled=2018-03-08T10:54:26+0200
+t=2018-03-15T15:34:40+0200 lvl=info msg="Config loaded from" logger=settings file=C:\\Users\\Admin\\lafivents\\grafana-5.0.1/conf/defaults.ini
+t=2018-03-15T15:34:40+0200 lvl=info msg="Config loaded from" logger=settings file=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\conf\\custom.ini
+t=2018-03-15T15:34:40+0200 lvl=info msg="Path Home" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1
+t=2018-03-15T15:34:40+0200 lvl=info msg="Path Data" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data
+t=2018-03-15T15:34:40+0200 lvl=info msg="Path Logs" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data\\log
+t=2018-03-15T15:34:40+0200 lvl=info msg="Path Plugins" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\data\\plugins
+t=2018-03-15T15:34:40+0200 lvl=info msg="Path Provisioning" logger=settings path=C:\\Users\\Admin\\lafivents\\grafana-5.0.1\\conf\\provisioning
+t=2018-03-15T15:34:40+0200 lvl=info msg="App mode production" logger=settings
+t=2018-03-15T15:34:40+0200 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
+t=2018-03-15T15:34:40+0200 lvl=info msg="Starting DB migration" logger=migrator
+t=2018-03-15T15:34:40+0200 lvl=info msg="Executing migration" logger=migrator id="copy data account to org"
+t=2018-03-15T15:34:40+0200 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account to org"
+t=2018-03-15T15:34:40+0200 lvl=info msg="Executing migration" logger=migrator id="copy data account_user to org_user"
+t=2018-03-15T15:34:40+0200 lvl=info msg="Skipping migration condition not fulfilled" logger=migrator id="copy data account_user to org_user"
+t=2018-03-15T15:34:40+0200 lvl=info msg="Starting plugin search" logger=plugins
+t=2018-03-15T15:34:40+0200 lvl=info msg="Initializing CleanUpService" logger=cleanup
+t=2018-03-15T15:34:40+0200 lvl=info msg="Initializing Alerting" logger=alerting.engine
+t=2018-03-15T15:34:40+0200 lvl=info msg="Initializing Stream Manager"
+t=2018-03-15T15:34:40+0200 lvl=info msg="Initializing HTTP Server" logger=http.server address=0.0.0.0:3000 protocol=http subUrl= socket=
+t=2018-03-15T17:22:42+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=1 uname= method=GET path=/login status=302 remote_addr=127.0.0.1 time_ms=61 size=24 referer="http://127.0.0.1:3000/d/_pXeTxgik/heat-meter?orgId=1"

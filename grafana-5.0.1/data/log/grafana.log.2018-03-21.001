@@ -1,0 +1,5 @@
+t=2018-03-20T21:50:39+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=1 uname= method=GET path=/api/datasources status=403 remote_addr=127.0.0.1 time_ms=12 size=31 referer=http://127.0.0.1:3000/datasources
+t=2018-03-20T21:50:41+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=1 uname= method=GET path=/api/org/invites status=403 remote_addr=127.0.0.1 time_ms=8 size=31 referer=http://127.0.0.1:3000/org/users
+t=2018-03-20T21:50:41+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=1 uname= method=GET path=/api/org/users status=403 remote_addr=127.0.0.1 time_ms=17 size=31 referer=http://127.0.0.1:3000/org/users
+t=2018-03-20T21:50:43+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=1 uname= method=GET path=/api/teams/search status=403 remote_addr=127.0.0.1 time_ms=9 size=31 referer=http://127.0.0.1:3000/org/teams
+t=2018-03-20T21:50:56+0200 lvl=info msg="Request Completed" logger=context userId=0 orgId=1 uname= method=GET path=/api/user status=404 remote_addr=127.0.0.1 time_ms=20 size=28 referer=http://127.0.0.1:3000/profile
